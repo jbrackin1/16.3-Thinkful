@@ -6,6 +6,14 @@
 const caesarModule = (function () {
   // you can add any code you want within this function scope
   const alpha = "abcdefghijklmnopqrstuvwxyz";
+  
+  const isLetter = (str) => {
+    for (let i = 0; i < str.length; i++)
+      {
+        if (alpha.includes(str[i])) return true; 
+      }
+  }
+  
   function caesar(input, shift, encode = true) {
  if (!shift || shift == 0 || shift < -25 || shift > 25) return false;
     
@@ -23,7 +31,7 @@ const caesarModule = (function () {
       {
          let char = input[i];
 //         console.log(input, shift);
-        if (!alpha.includes(char))
+        if (!isLetter(char))
           {
             encoded += char;
           }

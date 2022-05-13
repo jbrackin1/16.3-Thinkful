@@ -4,11 +4,18 @@
 // of the anonymous function on line 6
 
 const substitutionModule = (function () {
-  // you can add any code you want within this function scope
-
-  function substitution(input, alphabet, encode = true) {
+   const alpha = "abcdefghijklmnopqrstuvwxyz";
+  const isLetter = (str) => {
+    for (let i = 0; i < str.length; i++)
+      {
+          const char = str[i].toLowerCase();
+          const isLetter = alpha.includes(char);
+      }
+  }
     
-  const alpha = "abcdefghijklmnopqrstuvwxyz";
+  function substitution(input, alphabet, encode = true) {
+
+  
     // Error handling
     if (!alphabet || alphabet.length != 26) return false;
     for (let i = 0; i < alphabet.length; i++){
